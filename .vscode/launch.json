@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug asm",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/app/build/app",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "make asm debug",
+      "MIMode": "gdb",
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "setupCommands": [
+        {
+          "text": "-gdb-set disassembly-flavor intel"
+        }
+      ]
+    },
+    {
+      "name": "Debug app",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/app/build/app",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "make debug",
+      "MIMode": "gdb",
+      "stopAtEntry": false,
+      "externalConsole": false
+    }
+  ]
+}
