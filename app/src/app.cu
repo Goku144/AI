@@ -5,6 +5,8 @@
 int main()
 {
   HANDLER::Memory mem;
+
+  mem.info();
   
   return 0;
 }

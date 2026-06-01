@@ -6,7 +6,7 @@
 
 /** @brief Select CPU backend: 0 , Select GPU backend: 1. */
 #ifndef CPU_GPU
-#define CPU_GPU 1
+#define CPU_GPU 0
 #endif
 
 namespace CORE
@@ -42,13 +42,14 @@ namespace CORE
 
   enum MemoryErr
   {
-    memorySucess         = 0,
-    memoryErrOOM      = 1 << 1,
-    memoryErrOOB      = 1 << 2,
-    memoryErrInvalide = 1 << 3,
-    memoryErrState    = 1 << 4,
-    memoryErrFree     = 1 << 5,
-    memoryErrDestroy  = 1 << 6,
+    memorySucess      = 0,
+    memoryErrNull     = 1 << 1,
+    memoryErrOOM      = 1 << 2,
+    memoryErrOOB      = 1 << 3,
+    memoryErrInvalid = 1 << 4,
+    memoryErrState    = 1 << 5,
+    memoryErrFree     = 1 << 6,
+    memoryErrDestroy  = 1 << 7,
   };
 
   /** @brief Log severity. */

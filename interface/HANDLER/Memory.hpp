@@ -28,19 +28,25 @@ namespace HANDLER
 
       size_t getMemoryCpuCapacity() const;
 
-      size_t getMemoryGpuCapacity() const;
-
       void allocateCpu(void **ptr, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
+
+      void resetCpu();
+
+#if CPU_GPU == 1
+      size_t getMemoryGpuCapacity() const;
 
       void allocateGpu(void **ptr, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
 
-      void reset(CORE::MemoryType mType);
+      void resetGpu();
+#endif
 
       CORE::MemoryErr peekErr() const;
 
       CORE::MemoryErr getErr();
 
       void log(CORE::State level = CORE::INFO, const char *file = __FILE__, int line = __LINE__) const;
+
+      void info() const;
   };
 }
 
