@@ -6,7 +6,7 @@
 
 /** @brief Select CPU backend: 0 , Select GPU backend: 1. */
 #ifndef CPU_GPU
-#define CPU_GPU 0
+#define CPU_GPU 1
 #endif
 
 namespace CORE

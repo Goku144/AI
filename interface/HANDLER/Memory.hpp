@@ -41,7 +41,7 @@ namespace HANDLER
 
       void allocateGpu(void **ptr, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
 
-      void allocateGpu(VIEW::Buffer&, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
+      void allocateGpu(VIEW::Buffer& buff, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
 
       void resetGpu();
 #endif

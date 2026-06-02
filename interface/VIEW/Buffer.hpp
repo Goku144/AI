@@ -5,7 +5,6 @@
 
 namespace VIEW
 {
-
   struct __align__(CORE::ALIGNE_TO_256) Buffer
   {
     void *data;

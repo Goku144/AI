@@ -3,7 +3,7 @@ prog := app
 CXX     := nvcc
 CXXFlag := -O3 -Wno-deprecated-gpu-targets -arch=sm_75 -Xcompiler -fno-exceptions -diag-suppress 550
 CXXInc  := -Iinterface -Iapp/inc
-CXXLib  := -lcudnn -lcusparse -lcusolver -lcurand -lcublasLt -lcublas -lcudart -ldnnl
+CXXLib  := -lcudnn -lcusparse -lcusolver -lcurand -lcublasLt -lcublas -lcudart #-ldnnl
 
 ASM     := nasm
 ASMFlag := -f elf64 -F dwarf
