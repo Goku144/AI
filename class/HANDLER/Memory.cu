@@ -158,6 +158,14 @@ void HANDLER::Memory::allocateCpu(void **ptr, size_t size, CORE::Aligne aligneTo
   this->cpuOffset += alignedSize;
 }
 
+void HANDLER::Memory::allocateCpu(VIEW::Buffer& buff, size_t size, CORE::Aligne aligneTo)
+{
+  this->allocateCpu(&buff.data, size, aligneTo);
+  if(this->err != CORE::memorySucess) return;
+  buff.bytes = CORE::ALIGNE(size, aligneTo);
+  buff.mType = CORE::memoryTypeCpu;
+}
+
 void HANDLER::Memory::resetCpu()
 {
   this->err = CORE::memorySucess;
@@ -203,6 +211,14 @@ void HANDLER::Memory::allocateGpu(void **ptr, size_t size, CORE::Aligne aligneTo
 
   *ptr = (uint8_t *) this->gpuPtr + this->gpuOffset;
   this->gpuOffset += alignedSize;
+}
+
+void HANDLER::Memory::allocateGpu(VIEW::Buffer& buff, size_t size, CORE::Aligne aligneTo)
+{
+  this->allocateGpu(&buff.data, size, aligneTo);
+  if(this->err != CORE::memorySucess) return;
+  buff.bytes = CORE::ALIGNE(size, aligneTo);
+  buff.mType = CORE::memoryTypeGpu;
 }
 
 void HANDLER::Memory::resetGpu()

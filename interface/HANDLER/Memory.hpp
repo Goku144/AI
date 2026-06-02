@@ -3,6 +3,8 @@
 
 #include "CORE/State.hpp"
 
+#include "VIEW/Buffer.hpp"
+
 namespace HANDLER
 {
   class __align__(CORE::ALIGNE_TO_256) Memory
@@ -30,12 +32,16 @@ namespace HANDLER
 
       void allocateCpu(void **ptr, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
 
+      void allocateCpu(VIEW::Buffer& buff, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
+
       void resetCpu();
 
 #if CPU_GPU == 1
       size_t getMemoryGpuCapacity() const;
 
       void allocateGpu(void **ptr, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
+
+      void allocateGpu(VIEW::Buffer&, size_t size, CORE::Aligne aligneTo = CORE::ALIGNE_TO_256);
 
       void resetGpu();
 #endif
